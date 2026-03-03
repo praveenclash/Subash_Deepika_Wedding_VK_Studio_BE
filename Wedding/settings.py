@@ -71,6 +71,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Wedding.wsgi.application'
 
 
+import os
+import dj_database_url
+
+DEBUG = False
+
+ALLOWED_HOSTS = ["your-service-name.onrender.com"]
+
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
