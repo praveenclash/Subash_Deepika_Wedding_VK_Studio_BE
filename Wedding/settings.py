@@ -76,7 +76,7 @@ import dj_database_url
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["your-service-name.onrender.com"]
+ALLOWED_HOSTS = ["http://vkfotos.site/"]
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
