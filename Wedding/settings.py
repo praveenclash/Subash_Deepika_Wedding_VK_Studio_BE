@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s*@o^f7b02fbislf6cz9frb**i8m*)pw^sh9aowms+*01k2!c_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]  # temporarily for testing
 
 
 # Application definition
@@ -76,23 +76,27 @@ import dj_database_url
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["http://vkfotos.site/"]
-
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wedding_42dh',
-        'USER': 'wedding_42dh_user',
-        'PASSWORD': 'hwsXYGfhyopP9ojkfDIckLLhpXg0eks3',
-        'HOST': 'dpg-d6irmqjuibrs73de60qg-a.oregon-postgres.render.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'wedding_42dh',
+#         'USER': 'wedding_42dh_user',
+#         'PASSWORD': 'hwsXYGfhyopP9ojkfDIckLLhpXg0eks3',
+#         'HOST': 'dpg-d6irmqjuibrs73de60qg-a.oregon-postgres.render.com',
+#         'PORT': '5432',
+#     }
+# }
 
+
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
 
 
 # Password validation
